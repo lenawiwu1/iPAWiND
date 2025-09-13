@@ -21,10 +21,4 @@ logging.basicConfig(
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 if __name__ == "__main__":
-    scheduler = AsyncIOScheduler()
-    
-    scheduler.add_job(account_manager.update_udids_data, 'interval', minutes=30)
-    # scheduler.add_job(account_manager.update_udids_data, 'interval', minutes=180, next_run_time=datetime.now())
-
-    scheduler.start()
     executor.start_polling(dp)
